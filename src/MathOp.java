@@ -8,24 +8,24 @@ final class Number {
         this.number = num;
     }
 
-    public Number add(float num) {
+    public Number add(Number num) {
         Number n;
-        n = new Number(num + getNumber());
+        n = new Number(this.getNumber() + num.getNumber());
         return n;
     }
-    public Number subtract(float num) {
+    public Number subtract(Number num) {
         Number n;
-        n = new Number(getNumber() - num);
+        n = new Number(this.getNumber() - num.getNumber());
         return n;
     }
-    public Number multiply(float num) {
+    public Number multiply(Number num) {
         Number n;
-        n = new Number(num * getNumber());
+        n = new Number(this.getNumber() * num.getNumber());
         return n;
     }
-    public Number divide(float num) {
+    public Number divide(Number num) {
         Number n;
-        n = new Number(getNumber() / num);
+        n = new Number(this.getNumber() / num.getNumber());
         return n;
     }
     public float getNumber() {
@@ -36,8 +36,8 @@ final class Number {
 public class MathOp {
     public static void main(String[] args){
         Number numberA = new Number(10);
-        Number numberB = numberA.add(30);
-        Number numberC = numberA.add(numberB.getNumber()).divide(5);
+        Number numberB = numberA.add(new Number(30));
+        Number numberC = numberA.add(numberB).divide(new Number(5));
         System.out.print("The Answer is " + numberC.getNumber() +"\n");
 
     }
